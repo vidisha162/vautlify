@@ -8,6 +8,10 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+# Install nodemon globally
+RUN npm install -g nodemon
+
+
 # Copy the rest of the backend code
 COPY . .
 
