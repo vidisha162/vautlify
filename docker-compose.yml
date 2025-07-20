@@ -23,6 +23,21 @@ services:
     networks:
       - vaultify-net
 
+  backend:
+    build:
+      context: ./backend
+    container_name: vaultify-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - vaultify-net
+    volumes:
+      - ./backend:/app
+
+
+
 volumes:
   mongo-data:
 
